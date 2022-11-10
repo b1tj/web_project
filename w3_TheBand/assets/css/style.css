@@ -60,6 +60,10 @@ html {
     margin-top: 16px !important;
 }
 
+.mt-32 {
+    margin-top: 32px !important;
+}
+
 .pull-right {
     float: right;
 }
@@ -92,7 +96,6 @@ html {
     height: 46px;
     z-index: 1;
     background-color: #000;
-    overflow: hidden;
 }
 
 #nav {
@@ -251,7 +254,7 @@ html {
 }
 
 #content .member-list {
-    margin-top: 48px;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -260,6 +263,7 @@ html {
 
 #content .member-img {
     width: 154px;
+    margin-top: 15px;
     max-height: 205px;
     border-radius: 4px;
 }
@@ -304,7 +308,7 @@ html {
 /* Places */
 
 .place-list {
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .place-img {

@@ -35,15 +35,16 @@
             </ul>
             <!-- End: Nav -->
 
-            <!-- Begin: Search button-->
-            <div class="search-btn">
-                <i class="search-icon ti-search"></i>
-            </div>
-
+            <!-- Mobile button-->
             <div id="mobile-menu" class="mobile-menu-btn">
                 <i class="menu-icon ti-menu"></i>
             </div>
-            <!-- End: Search button-->
+
+            <!-- Search button-->
+            <div class="search-btn">
+                <i class="search-icon ti-search"></i>
+            </div>
+            
 
         </div>
 
@@ -71,17 +72,17 @@
                     consequat.
                 </p>
                 <div class="row member-list">
-                    <div class="col col-third text-center">
+                    <div class="col col-third s-col-full mt-32 text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/image/band/bandmember.jpg" alt="Name" class="member-img">
                     </div>
 
-                    <div class="col col-third text-center">
+                    <div class="col col-third s-col-full mt-32 text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/image/band/bandmember.jpg" alt="Name" class="member-img">
                     </div>
 
-                    <div class="col col-third text-center">
+                    <div class="col col-third s-col-full mt-32 text-center">
                         <p class="member-name">Name</p>
                         <img src="./assets/image/band/bandmember.jpg" alt="Name" class="member-img">
                     </div>
@@ -103,33 +104,33 @@
 
                     <!-- Places -->
                     <div class="row place-list">
-                        <div class="col col-third">
+                        <div class="col col-third s-col-full mt-16">
                             <img src="/assets/image/place/newyork.jpg" alt="NewYork" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button href="#" class="btn js-buy-ticket">Buy Tickets</button>
+                                <button href="#" class="btn js-buy-ticket s-full-width">Buy Tickets</button>
                             </div>
                         </div>
 
-                        <div class="col col-third">
+                        <div class="col col-third s-col-full mt-16">
                             <img src="/assets/image/place/paris.jpg" alt="NewYork" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button href="#" class="btn js-buy-ticket">Buy Tickets</button>
+                                <button href="#" class="btn js-buy-ticket s-full-width">Buy Tickets</button>
                             </div>
                         </div>
 
-                        <div class="col col-third">
+                        <div class="col col-third s-col-full mt-16">
                             <img src="/assets/image/place/sanfran.jpg" alt="NewYork" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <button href="#" class="btn js-buy-ticket">Buy Tickets</button>
+                                <button href="#" class="btn js-buy-ticket s-full-width">Buy Tickets</button>
                             </div>
                         </div>
                     </div>
@@ -142,20 +143,20 @@
                 <p class="section-sub-heading">Fan? Drop a note!</p>
 
                 <div class="row contact-content">
-                    <div class="col col-half contact-info">
+                    <div class="col col-half s-col-full contact-info">
                         <p><i class="ti-location-pin"></i>Chicago, US</p>
                         <p><i class="ti-mobile"></i>Phone: +00 151515</p>
                         <p><i class="ti-email"></i>Email: mail@mail.com</p>
                     </div>
 
-                    <div class="col col-half contact-form">
+                    <div class="col col-half s-col-full contact-form">
                         <form action="">
                             <div class="row">
-                                <div class="col col-half">
+                                <div class="col col-half s-col-full">
                                     <input type="text" name="" required placeholder="Name" id="" class="form-control">
                                 </div>
 
-                                <div class="col col-half">
+                                <div class="col col-half s-col-full s-mt-8">
                                     <input type="email" name="" required placeholder="Email" id="" class="form-control">
                                 </div>
                             </div>
@@ -166,7 +167,7 @@
                                 </div>
                             </div>
 
-                            <input class="btn pull-right mt-16" type="submit" value="SEND">
+                            <input class="btn pull-right s-full-width mt-16" type="submit" value="SEND">
                         </form>
                     </div>
                 </div>
@@ -271,7 +272,7 @@
             var header = document.getElementById('header');
             var mobileMenu = document.getElementById('mobile-menu')
             var headerHeight = header.clientHeight;
-
+            
             mobileMenu.onclick = function() {
                 var isClosed = header.clientHeight === headerHeight;
 
@@ -286,10 +287,14 @@
             var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
             for (var i = 0; i < menuItems.length; i++) {
                 var menuItem = menuItems[i];
-                
-
+                                
                 menuItem.onclick = function() {
-                    header.style.height = null;
+                    var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                    if(!isParentMenu) {
+                        header.style.height = null;
+                    } else {
+                        event.preventDefault();
+                    }
                 }
             }
         </script>
