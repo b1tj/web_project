@@ -77,6 +77,8 @@ html {
     background-color: #000;
     border: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -196,7 +198,7 @@ html {
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/assets/image/slider/slider1.jpg') top center / cover no-repeat;
+    background: url('../image/slider/slider1.jpg') top center / cover no-repeat;
 }
 
 #slider .text-content {
@@ -216,6 +218,7 @@ html {
 #slider .text-description {
     font-size: 15px;
     margin-top: 25px;
+    text-shadow: 0 0 1px #000;
 }
 
 
@@ -352,6 +355,15 @@ html {
 .contact-info {
     font-size: 18px;
     line-height: 1.5;
+}
+
+.contact-info a {
+    color: #101aef;
+    opacity: 0.8;
+}
+
+.contact-info a:hover   {
+    opacity: 1;
 }
 
 .contact-info i[class*="ti-"] {
